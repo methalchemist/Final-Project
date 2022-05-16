@@ -1,0 +1,15 @@
+body {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 69vh;
+    animation: auto;
+    background: skyblue;
+}
+
+.card {
+    background: bisque;
+    padding: 3em;
+    border-radius: 60px;
+    width: auto;
+}

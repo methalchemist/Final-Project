@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App</title>
+    <link rel = "stylesheet" href = "css/style.css">
+    <script src="./script.js"></script>
 </head>
 <body>
     <div class="card">
         <div class = "search">
-            <input type="text" id="city" placeholder="Enter city name">
-            <button type="submit" id="search">Search</button>
-</body>
+            <input type="text" class = "search-bar">
+            <button class = "search-button">Search</button>
+        </div>
+        <div class="weather">
+            <h2 class="city">Weather in NYC</h2>
+            <div class="temp">60F</div>
+            <img src="" alt="" class="weather-icon"/>
+            <div class="description">Partly Cloudy</div>
+            <div class="wind" >Wind: 5mph</div>
+        </div>
 </html>

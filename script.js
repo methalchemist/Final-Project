@@ -18,10 +18,10 @@ let weather = {
         //console.log(name, temp, humidity, speed, icon, description);
         document.querySelector(".city").innerText = "Weather in " + name;
         document.querySelector(".temp").innerText = temp + "°F";
+        //document.querySelector(".weather-icon").setAttribute("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png");
+        document.querySelector(".wind").innerText = speed + " mph";
         //document.querySelector(".humidity").innerText = humidity + "%";
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
-        document.querySelector(".wind").innerText = speed + " mph";
-        document.querySelector(".weather-icon").setAttribute("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png");
     },
     search: function() {
         this.getWeather(document.querySelector(".search-bar").value);

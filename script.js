@@ -8,9 +8,33 @@ let weather = {
         +",&units=imperial&appid=" 
         + this.apiKey)
         .then((response) => response.json())
-        .then((data) => console.log(data)); 
+        .then((data) => this.displayWeather(data)); 
     },
     displayWeather: function(data) {
-        //stuff
+        const {name} = data;
+        const {icon, description} = data.weather[0];
+        const {temp, humidity} = data.main;
+        const {speed} = data.wind;
+        //console.log(name, temp, humidity, speed, icon, description);
+        document.querySelector(".city").innerText = "Weather in " + name;
+        document.querySelector(".temp").innerText = temp + "°F";
+        //document.querySelector(".humidity").innerText = humidity + "%";
+        document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
+        document.querySelector(".wind").innerText = speed + " mph";
+        document.querySelector(".weather-icon").setAttribute("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png");
+    },
+    search: function() {
+        this.getWeather(document.querySelector(".search-bar").value);
+        //TODO: add error handling and check for valid zip code
     }
-}
+};
+
+document.querySelector(".search button").addEventListener("click", function(){
+    weather.search();
+});
+
+document.querySelector(".search-bar").addEventListener("keyup", function (event) {
+    if (event.key == "Enter") {
+      weather.search();
+    }
+});

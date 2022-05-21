@@ -26,6 +26,11 @@ let weather = {
     search: function() {
         this.getWeather(document.querySelector(".search-bar").value);
         //TODO: add error handling and check for valid zip code
+        if (document.querySelector(".search-bar").value.length == 5) {
+            weather.search();
+        } else {
+            alert("Please enter a valid zip code");
+        }
     }
 };
 

@@ -25,8 +25,8 @@ let weather = {
     },
     search: function() {
         this.getWeather(document.querySelector(".search-bar").value);
-        //TODO: add error handling and check for valid zip code
-        if (document.querySelector(".search-bar").value.length == 5) {
+        //TODO: add error handling and check for valid zip code before calling api
+        if (document.querySelector(".search-bar").value.length == 5 && document.querySelector(".search-bar").value.match(/^[0-9]+$/)) {
             weather.search();
         } else {
             alert("Please enter a valid zip code");

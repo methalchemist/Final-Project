@@ -1,0 +1,23 @@
+title Sequence Diagram
+
+
+User->(1)Server:GET localhost:3000
+
+Server->(1)User: 200 OK + index.html
+
+
+User->Server:User input
+
+participant Smarty API Server
+
+Server ->Smarty API Server: get details (zip,location,country)
+Smarty API Server -->Server: API response.json()
+
+participant Weather API server
+
+Server ->Weather API server: get weather details
+
+Weather API server -->Server: returns location,weather,humidity and wind speed
+
+Server ->User: Data Requested
+
